@@ -1,6 +1,6 @@
 <?php
 
-// PHP Hashmap practice
+// PHP Hashmap Array
 
 // Create the Object
 $UserFunctions = new UserFunctions();
