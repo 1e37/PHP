@@ -82,8 +82,9 @@ class UserFunctions{
 	
 	function GetOverAllUserAverage()
 	{
+		$average = array_sum($this->map_array) / count($this->map_array);
+		echo "---The overall average equals--- \n" . round($average, 2) . "\n";
 		
-		echo "---The overall average equals--- \n" . round($average, 3) . "\n";
 	}
 	
 	
