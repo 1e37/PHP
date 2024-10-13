@@ -1,0 +1,139 @@
+<?php
+
+// Abstract class for products
+abstract class Product {
+    private $name;
+    private $price;
+
+    public function __construct($name, $price) {
+        $this->name = $name;
+        $this->price = $price;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function getPrice() {
+        return $this->price;
+    }
+}
+
+// Concrete class for Pizza
+class Pizza extends Product {
+    private $toppings;
+
+    public function __construct($name, $price) {
+        parent::__construct($name, $price);
+        $this->toppings = array();
+    }
+
+    public function addTopping($topping) {
+        $this->toppings[] = $topping;
+    }
+
+    public function getToppings() {
+        return $this->toppings;
+    }
+}
+
+// Concrete class for Pasta
+class Pasta extends Product {
+    private $toppings;
+
+    public function __construct($name, $price) {
+        parent::__construct($name, $price);
+        $this->toppings = array();
+    }
+
+    public function addTopping($topping) {
+        $this->toppings[] = $topping;
+    }
+
+    public function getToppings() {
+        return $this->toppings;
+    }
+}
+
+// Class for Employee
+class Employee {
+    private $name;
+    private $role;
+
+    public function __construct($name, $role) {
+        $this->name = $name;
+        $this->role = $role;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function getRole() {
+        return $this->role;
+    }
+}
+
+// Class for Bakery
+class Bakery {
+    private $employees;
+    private $products;
+
+    public function __construct() {
+        $this->employees = array();
+        $this->products = array();
+    }
+
+    public function addEmployee(Employee $employee) {
+        $this->employees[] = $employee;
+    }
+
+    public function getEmployees() {
+        return $this->employees;
+    }
+
+    public function addProduct(Product $product) {
+        $this->products[] = $product;
+    }
+
+    public function getProducts() {
+        return $this->products;
+    }
+}
+
+// Example usage
+$bakery = new Bakery();
+
+$employee1 = new Employee("John", "Baker");
+$employee2 = new Employee("Jane", "Cashier");
+
+$bakery->addEmployee($employee1);
+$bakery->addEmployee($employee2);
+
+$pizza = new Pizza("Margherita", 10.99);
+$pasta = new Pasta("Spaghetti Bolognese", 12.99);
+
+$pasta->addTopping("Meatballs");
+$pasta->addTopping("Extra Cheese");
+
+$bakery->addProduct($pizza);
+$bakery->addProduct($pasta);
+
+// Print out the products and their toppings
+foreach ($bakery->getProducts() as $product) {
+    echo $product->getName() . ": $" . $product->getPrice() . "<br>";
+    if ($product instanceof Pasta) {
+        echo "Toppings: ";
+        foreach ($product->getToppings() as $topping) {
+            echo $topping . ", ";
+        }
+        echo "<br>";
+    }
+}
+
+// Print out the employees
+foreach ($bakery->getEmployees() as $employee) {
+    echo $employee->getName() . " - " . $employee->getRole() . "<br>";
+}
+
+?>

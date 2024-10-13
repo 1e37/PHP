@@ -1,0 +1,64 @@
+<?php
+// (2) OOP and Inheritance
+class Pizza {
+
+    // The name of the pizza variant
+    //public $name;
+  
+    // (3) Array declaration
+    private $Geheimzutaten = ["wasser", "mehl", "hefe", "salz", "zucker"];
+    public $PizzaTable = [];
+
+    // Construct our objects
+    public function __construct() {
+
+    // Add products to the array by using function
+      $this->addPizza("Margharita", 10.99);
+      $this->addPizza("Hawaiian", 12.99);
+      $this->addPizza("Chicken", 13.99);
+      $this->addPizza("Fungi", 14.99);
+    }
+
+    // function to add a product to the array
+    public function addPizza($name, $price) {
+      $this->PizzaTable[] = ["name" => $name, "price" => $price];
+    }
+
+    // delete a product from array:
+    // Take the Pizza name as argument
+    // (4) - (5) (6) Grinds |  irritate foreach index in our array as 'i' and store the value in pizza meanwhile
+    // When found, identified by name it removes the index from array.
+    public function removePizza($name) {
+      foreach ($this->PizzaTable as $i => $pizza) {
+        if ($pizza["name"] == $name) {
+          unset($this->PizzaTable[$i]);
+          return true;
+        }
+      }
+      return false;
+    }
+
+    // Function to get our current products
+    public function getPizzaTable() {
+      return $this->PizzaTable;
+    }
+  }
+
+  
+
+  // Inheritance from a Parent class with new specified attributes for the order.
+  class Extras extends Pizza {
+    public $crustType;
+    public $extraIngedients;
+  
+    public function __construct($crustType, $extraIngedients) {
+      $this->crustType = ["With Crust", "Without crust"];
+      $this->$extraIngedients = $toppingOptions;
+    }
+  
+    public function getPizzaExtraDetails() {
+      return "Crust: $this->crustType, Sauce: $this->sauceType, Toppings: " . implode(", ", $this->toppingOptions);
+    }
+  }
+  
+?>
