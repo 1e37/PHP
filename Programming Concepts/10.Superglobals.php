@@ -3,7 +3,6 @@
 /*
 The PHP superglobal variables are:
 
-
 $GLOBALS
 $_SERVER || server environment, such as headers, paths, and script locations.
 $_REQUEST || contains the contents of $_GET, $_POST, and $_COOKIE.

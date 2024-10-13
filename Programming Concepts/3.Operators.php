@@ -4,7 +4,7 @@ echo "37 + 13 = " . addition(37,13) ."\n";
 echo "13 - 37 = " . substraction(13, 37) . "\n";
 echo "7 * 4 = " . multiplication(7,4) ."\n";
 echo "24 / 7 = " . division(24,7) ."\n";
-echo "1 ^ 10 = " . power(1,10) ."\n\n";
+echo "2 ^ 10 = " . power(2,10) ."\n\n";
 echo "-----------------------------------------\n";
 echo "My username as number : " . _1e(37) . "\n";
 
@@ -40,9 +40,8 @@ function power($base, $exponent){
 
 // Calculate my username
 function _1e($power){
+    //1 * 10 ^20
 $_1e = multiplication(1,10);
 return  power($_1e,$power );
-
-//1 * 10 ^20
 }
 ?>

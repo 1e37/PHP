@@ -1,5 +1,4 @@
 <?php 
-
 // Data Type Validator
 
 // INT
@@ -29,6 +28,4 @@ function TypeOf($input) {
             break;
     }
 }
-
-
 ?>

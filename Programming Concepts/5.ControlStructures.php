@@ -1,7 +1,6 @@
 <?php
 
 // PHP Control Structures
-
 // Create the Object
 $UserFunctions = new UserFunctions();
 
@@ -24,8 +23,6 @@ if (!isset($UserFunctions->GetMapArray()["Bob"])) {
 }
 
 $UserFunctions->AddUserToMap("Bob", 3);
-
-
 $UserFunctions->AddUserToMap("SYN", 1);
 $UserFunctions->AddUserToMap("SYN-ACK", 2);
 $UserFunctions->AddUserToMap("ACK", 3);
@@ -33,12 +30,15 @@ $UserFunctions->AddUserToMap("ACK", 3);
 // Incrementing i and irretating until the array has no more index avaliable.
 $mapArray = $UserFunctions->GetMapArray();
 $array_index = array_keys($mapArray);
+
+// for
 // Schleife, bedingung, inkrementation
 for ($i = 0; $i < count($array_index); $i++) {
     $user = $array_index[$i];
     echo "Entry: $user, Value: " . $mapArray[$user] . "\n";
 }
 
+// while
 // Do something while the condition is not satisfied.
 while (count($mapArray) > 2) {
     $lastindex = array_key_last($mapArray);
@@ -50,6 +50,7 @@ while (count($mapArray) > 2) {
 echo "Condition is now satisfied:\n";
 print_r($UserFunctions->GetMapArray());
 
+// foreach
 // Lets increment the stored value by 1 using foreach
 foreach ($UserFunctions->GetMapArray() as $user => $value) {
     $UserFunctions->IncrementUserValue($user);
