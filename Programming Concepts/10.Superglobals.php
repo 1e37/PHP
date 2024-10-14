@@ -39,7 +39,7 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // expires i
 
 ?>
 
-<!--// Lets create a formular:!-->
+<!--Lets create a formular!-->
 <!DOCTYPE html>
 <html lang="de">
 
