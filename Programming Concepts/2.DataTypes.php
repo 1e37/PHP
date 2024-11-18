@@ -9,6 +9,8 @@ TypeOf(13.37);
 TypeOf("Some text");
 // Bool
 TypeOf(true);
+
+
 function TypeOf($input) {
     switch (gettype($input)) {
         case 'integer':
@@ -28,4 +30,3 @@ function TypeOf($input) {
             break;
     }
 }
-?>
