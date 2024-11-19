@@ -16,7 +16,7 @@ function transformiereSatz($satz) {
     $transformiert = array_map(function($wort) {
         //macht alle buchstaben klein und ersten buchstaben groß (ucfirst)
         $wort = ucfirst(strtolower($wort)); // Lücke 2
-        // reverse the word
+        // dreht den inhalt des strings
         return strrev($wort); // Lücke 3
     }, $woerter);
 

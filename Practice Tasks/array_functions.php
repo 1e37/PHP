@@ -4,24 +4,20 @@
 // von Zahlen nur die geraden Zahlen filtert und diese verdoppel
 
 
-// Funktion zum Filtern und Verdoppeln gerader Zahlen
-function filterAndDoubleEvent($numbers)
-{
-    // Filtere gerade Zahlen
-    $evenNumbers = array_filter($numbers, function ($number) {
-        // Gerade Zahlen mit modolo operator testen
-        return $number % 2 === 0; 
+// Programm 1: Zahlenverarbeitung
+function verarbeiteArray($zahlen) {
+    $ergebnis = array_filter($zahlen, function($zahl) {
+        return $zahl % 2 === 0;  // Lücke 1
     });
 
-    // Verdopplung der geraden Zahlen
-    $doubledEvent = array_map(function ($number) 
-    // Gefilterte Zahlen mit 2 Multiplizieren
-    {return $number * 2; }, $evenNumbers);
+    $ergebnis = array_map(function($zahl) {
+        return $zahl * 2; // Lücke 2
+    }, $ergebnis);
 
-    // Ergebnis Rückgabe
-    return $doubledEvent;
+    return $ergebnis;  // Lücke 3
 }
 
 // Test
 $zahlen = [1, 2, 3, 4, 5, 6];
-print_r(filterAndDoubleEvent($zahlen));
+print_r(verarbeiteArray($zahlen));
+?>
